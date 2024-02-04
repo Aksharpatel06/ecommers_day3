@@ -43,6 +43,7 @@ class _appState extends State<app> {
                 setState(() {
                   count++;
                   dynamiclist.add(count);
+                  print(count);
                 });
               },
                 child: Icon(Icons.add),
@@ -50,8 +51,12 @@ class _appState extends State<app> {
               SizedBox(width: 10,),
               FloatingActionButton(onPressed: (){
                 setState(() {
-                  count--;
-                  dynamiclist.remove(count);
+                  if(count>0)
+                    {
+                      dynamiclist.remove(count);
+                      count--;
+                      print(count);
+                    }
                 });
               },
                   child: Text('-',style: TextStyle(
@@ -65,7 +70,7 @@ class _appState extends State<app> {
     );
   }
 }
-int count =1;
+int count =0;
 Widget list(int? number)
 {
   return Container(
