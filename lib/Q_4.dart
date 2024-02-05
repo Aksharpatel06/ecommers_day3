@@ -43,7 +43,6 @@ class _appState extends State<app> {
                 setState(() {
                   count++;
                   dynamiclist.add(count);
-                  print(count);
                 });
               },
                 child: Icon(Icons.add),
@@ -55,7 +54,6 @@ class _appState extends State<app> {
                     {
                       dynamiclist.remove(count);
                       count--;
-                      print(count);
                     }
                 });
               },
